@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beam2-deployment
+  labels:
+    app: beam2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: beam2
+  template:
+    metadata:
+      labels:
+        app: beam2
+    spec:
+      containers:
+        - name: beam2-php
+          image: docker.io/niekvdm/php-beam2
+          ports:
+            - containerPort: 80
+        - name: beam2-mariadb
+          image: registry.hub.docker.com/library/mariadb
+          ports:
+            - containerPort: 3306
