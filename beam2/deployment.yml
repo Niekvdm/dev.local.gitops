@@ -15,11 +15,11 @@ spec:
         app: beam2
     spec:
       containers:
-        - name: beam2-php
-          image: docker.io/niekvdm/php-beam2
-          ports:
-            - containerPort: 80
-        - name: beam2-mariadb
-          image: registry.hub.docker.com/library/mariadb
-          ports:
-            - containerPort: 3306
+      - name: beam2-php
+        image: docker.io/niekvdm/php-beam2
+        ports:
+        - containerPort: 80
+      - name: beam2-mariadb
+        image: registry.hub.docker.com/library/mariadb
+        ports:
+        - containerPort: 3306
